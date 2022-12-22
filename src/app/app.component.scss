@@ -4,10 +4,15 @@
 
 mat-sidenav-content {
     display: flex;
-    align-items: center;
+    // align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 mat-sidenav {
     padding: 20px;  
+}
+
+div {
+    margin: 10px 0;
 }

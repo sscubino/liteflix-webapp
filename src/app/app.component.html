@@ -1,8 +1,33 @@
-<mat-sidenav-container class="app-container">
+<mat-sidenav-container class="app-container mat-typography">
   <mat-sidenav #sidenav mode="over" position="end">Sidenav content</mat-sidenav>
   <mat-sidenav-content>
-    <h1>LA CASA DE PAPEL</h1>
-    <button mat-flat-button (click)="sidenav.open()">Open</button>
+    <div>
+      <h1>LA CASA DE PAPEL</h1>
+    </div>
+    <div>
+      <button mat-button (click)="sidenav.open()">Open</button>
+      <button mat-button color="primary">Primary</button>
+      <button mat-button color="accent">Accent</button>
+      <button mat-button color="warn">Warn</button>
+    </div>
+    <div>
+      <button mat-raised-button (click)="sidenav.open()">Open</button>
+      <button mat-raised-button color="primary">Primary</button>
+      <button mat-raised-button color="accent">Accent</button>
+      <button mat-raised-button color="warn">Warn</button>
+    </div>
+    <div>
+      <button mat-stroked-button (click)="sidenav.open()">Open</button>
+      <button mat-stroked-button color="primary">Primary</button>
+      <button mat-stroked-button color="accent">Accent</button>
+      <button mat-stroked-button color="warn">Warn</button>
+    </div>
+    <div>
+      <button mat-flat-button (click)="sidenav.open()">Open</button>
+      <button mat-flat-button color="primary">Primary</button>
+      <button mat-flat-button color="accent">Accent</button>
+      <button mat-flat-button color="warn">Warn</button>
+    </div>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

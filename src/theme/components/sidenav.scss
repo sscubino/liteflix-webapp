@@ -1,0 +1,18 @@
+@use '@angular/material' as mat;
+
+$sidenav-background-palette: (
+    background: #191919,
+    card:       #ffffff,
+    dialog:     rgba(36, 36, 36, 0.9)
+);
+
+$sidenav-theme: (
+    primary: $liteflix-primary-palette,
+    accent: $liteflix-accent-palette,
+    warn: $liteflix-warn-palette,
+    is-dark: true,
+    foreground: mat.$dark-theme-foreground-palette,
+    background: $sidenav-background-palette,
+);
+
+@include mat.sidenav-theme($sidenav-theme);

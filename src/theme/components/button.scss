@@ -1,0 +1,20 @@
+@use '@angular/material' as mat;
+
+@include mat.button-theme($liteflix-dark-theme);
+
+button.mat-button-base {
+    width: 248px;
+    border-radius: 0;
+}
+.mat-button-base > span {
+    letter-spacing: 4px;
+    line-height: 56px;
+}
+
+.mat-flat-button, .mat-raised-button {
+    background: $primary-background-color;
+}
+
+.mat-stroked-button:not(.mat-button-disabled) {
+	border-color: rgba(220, 220, 220, 0.5);
+}
