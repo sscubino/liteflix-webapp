@@ -1,0 +1,13 @@
+<div
+  class="tumbnail-container"
+  [ngStyle]="{
+    'background-image':
+      'url(' +
+      movie.backdropURLForWidth(container.offsetWidth, container.offsetHeight) +
+      ')'
+  }"
+  #container>
+  <mat-icon svgIcon="play-button"></mat-icon>
+  <div class="title-fading"></div>
+  <p class="movie-title">{{ movie.title }}</p>
+</div>

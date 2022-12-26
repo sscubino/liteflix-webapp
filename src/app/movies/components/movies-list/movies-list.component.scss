@@ -1,0 +1,20 @@
+.separator {
+  height: 18px;
+}
+
+.movie-item-container {
+  margin-top: 18px;
+}
+
+.menu-button {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 30px;
+
+  mat-icon {
+    font-size: 14px;
+    height: 14px;
+    width: 14px;
+    line-height: 14px;
+  }
+}

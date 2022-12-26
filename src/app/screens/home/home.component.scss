@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-direction: row;
 }
 
 .movie-backdrop {
@@ -17,16 +16,15 @@
   background-repeat: no-repeat;
   background-size: cover;
   z-index: -1;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .featured-movie-container {
   height: 100%;
-  flex: 1;
   display: flex;
   align-items: flex-end;
   flex-direction: row;
-  margin-right: 125px;
+  margin-right: 5%;
 }
 
 .featured-movie-details {
@@ -38,6 +36,14 @@
 }
 
 .trending-movies-container {
-  width: 220px;
+  // width: 300px;
+}
+
+mat-icon {
+  font-size: 14px;
+  height: 14px;
+  width: 14px;
+  line-height: 14px;
+  margin-right: 12px;
 }
 

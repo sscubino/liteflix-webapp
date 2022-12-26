@@ -1,9 +1,7 @@
 <mat-sidenav-container class="app-container">
   <mat-sidenav #sidenav mode="over" position="end">Sidenav content</mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content class="content-container">
     <button mat-button (click)="sidenav.open()">Open</button>
-    <div class="content-container">
-      <router-outlet></router-outlet>
-    </div>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

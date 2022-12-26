@@ -1,0 +1,9 @@
+@use '@angular/material' as mat;
+
+@include mat.menu-theme($liteflix-dark-theme);
+
+.mat-menu-panel {
+  border-radius: 0!important;
+  width: 241px;
+  background-color: #242424;
+}
