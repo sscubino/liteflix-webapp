@@ -1,0 +1,43 @@
+.home-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.movie-backdrop {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.featured-movie-container {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+  margin-right: 125px;
+}
+
+.featured-movie-details {
+  margin-bottom: 162px;
+
+  button {
+    margin-right: 24px;
+  }
+}
+
+.trending-movies-container {
+  width: 220px;
+}
+

@@ -1,0 +1,12 @@
+<div class="home-container">
+  <div *ngIf="featuredMovieBackdropURL" [ngStyle]="{'background-image': 'url('+featuredMovieBackdropURL+')'}" class="movie-backdrop container"></div>
+  <div class="featured-movie-container">
+    <div class="featured-movie-details">
+      <h3>ORIGINAL DE <b style="line-height: 20px;">LITEFLIX</b></h3>
+      <h1 class="mat-headline-1">{{featuredMovie?.title}}</h1>
+      <button mat-flat-button>REPRODUCIR</button>
+      <button mat-stroked-button>MI LISTA</button>
+    </div>
+  </div>
+  <div class="trending-movies-container"></div>
+</div>
