@@ -5,13 +5,13 @@ import { MoviesApiService } from 'src/app/movies/services/movies-api.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
   public featuredMovie?: Movie;
   public featuredMovieBackdropURL?: string;
 
-  constructor(private moviesService: MoviesApiService) { }
+  constructor(private moviesService: MoviesApiService) {}
 
   ngOnInit() {
     this.moviesService.getFeaturedMovie().subscribe(movie => {

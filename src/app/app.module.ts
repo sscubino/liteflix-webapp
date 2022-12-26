@@ -10,9 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './screens/home/home.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,9 +18,9 @@ import { HomeModule } from './screens/home/home.module';
     MatSidenavModule,
     MatButtonModule,
     HttpClientModule,
-    HomeModule
+    HomeModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -6,20 +6,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MoviesModule } from 'src/app/movies/movies.module';
 import { MoviesApiService } from 'src/app/movies/services/movies-api.service';
 
-
-
 @NgModule({
-  declarations: [
-    HomeComponent
-  ],
-  imports: [
-    CommonModule,
-    MatSidenavModule,
-    MatButtonModule,
-    MoviesModule
-  ],
-  providers: [
-    MoviesApiService
-  ],
+  declarations: [HomeComponent],
+  imports: [CommonModule, MatSidenavModule, MatButtonModule, MoviesModule],
+  providers: [MoviesApiService],
 })
-export class HomeModule { }
+export class HomeModule {}
