@@ -62,6 +62,10 @@ $liteflix-typography-config: mat.define-typography-config(
 
 @include mat.typography-hierarchy($liteflix-typography-config);
 
+.mat-headline-1 {
+  color: mat.get-color-from-palette($primary-palette, 500);
+}
+
 
 // Theme
 
