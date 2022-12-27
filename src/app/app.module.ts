@@ -5,25 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconRegistry } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './screens/home/home.module';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { ShareModule } from './share/share.module';
 
 @NgModule({
-  declarations: [AppComponent, ToolbarComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
-    MatButtonModule,
     HttpClientModule,
     HomeModule,
-    MatIconModule,
-    MatToolbarModule,
+    ShareModule,
   ],
   providers: [MatIconRegistry],
   bootstrap: [AppComponent],

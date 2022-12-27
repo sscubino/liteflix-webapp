@@ -1,0 +1,16 @@
+<div
+  class="drag-and-drop-container"
+  appFileDrop
+  (fileDropped)="onFileDropped($event)">
+  <input
+    type="file"
+    #fileDropRef
+    id="fileDropRef"
+    (change)="fileBrowserHangler($event)" />
+  <span>
+    <label for="fileDropRef">
+      <mat-icon svgIcon="clip"></mat-icon>AGREGÁ UN ARCHIVO
+    </label>
+    O ARRASTRALO Y SOLTALO AQUÍ
+  </span>
+</div>

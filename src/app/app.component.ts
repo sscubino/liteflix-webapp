@@ -25,6 +25,7 @@ export class AppComponent {
       'tick',
       'menu',
       'notifications',
+      'clip',
     ];
     ICON_NAMES.forEach(iconName => {
       this.matIconRegistry.addSvgIcon(

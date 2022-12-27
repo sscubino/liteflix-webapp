@@ -1,0 +1,36 @@
+
+.drag-and-drop-container {
+  box-sizing: border-box;
+  border: 1px dashed #FFFFFF;
+  padding: 40px 70px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  visibility: hidden;
+  position: absolute;
+}
+
+span {
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  vertical-align: middle;
+  align-items: center;
+  margin: 0;
+  vertical-align: middle;
+  mat-icon {
+    font-size: 15px;
+    line-height: 15px;
+    height: 15px;
+    width: 15px;
+    margin-right: 16px;
+  }
+  label {
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 700;
+  }
+}
