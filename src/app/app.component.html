@@ -1,7 +1,13 @@
 <mat-sidenav-container class="app-container">
   <mat-sidenav #sidenav mode="over" position="end">Sidenav content</mat-sidenav>
-  <mat-sidenav-content class="content-container">
-    <button mat-button (click)="sidenav.open()">Open</button>
-    <router-outlet></router-outlet>
+  <mat-sidenav-content style="position: relative">
+    <div class="content-container">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="toolbar-contaier">
+      <div class="content-container">
+        <app-toolbar (openSidenav)="sidenav.open()"></app-toolbar>
+      </div>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

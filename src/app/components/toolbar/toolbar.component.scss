@@ -1,0 +1,22 @@
+.app-title {
+  font-size: 34px;
+  line-height: 34px
+}
+
+.profile-icon {
+  border-radius: 50%;
+
+  img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+  }
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+button {
+  margin-left: 35px
+}

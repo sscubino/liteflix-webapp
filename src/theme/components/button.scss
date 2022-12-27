@@ -3,20 +3,24 @@
 @include mat.button-theme($liteflix-dark-theme);
 
 button.mat-button-base {
-    width: 248px;
-    border-radius: 0;
+  width: 248px;
+  border-radius: 0;
 }
 .mat-button-base > span {
-    letter-spacing: 4px;
-    line-height: 56px;
+  letter-spacing: 4px;
+  line-height: 56px;
 }
 
 .mat-flat-button, .mat-raised-button {
-    background: $primary-background-color;
-    border-color: transparent;
+  background: $primary-background-color;
+  border-color: transparent;
 }
 
 .mat-stroked-button:not(.mat-button-disabled) {
 	background-color: rgba(36, 36, 36, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+button.mat-icon-button {
+  width: unset;
 }

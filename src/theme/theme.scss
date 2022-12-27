@@ -62,7 +62,7 @@ $liteflix-typography-config: mat.define-typography-config(
 
 @include mat.typography-hierarchy($liteflix-typography-config);
 
-.mat-headline-1 {
+.mat-primary-color-text {
   color: mat.get-color-from-palette($primary-palette, 500);
 }
 
@@ -85,4 +85,5 @@ $liteflix-dark-theme: mat.define-dark-theme((
 @import './components/button.scss';
 @import './components/menu.scss';
 @import './components/icon.scss';
+@import './components/toolbar.scss';
 

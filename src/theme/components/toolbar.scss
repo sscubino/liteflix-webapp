@@ -1,0 +1,38 @@
+@use '@angular/material' as mat;
+
+@include mat.toolbar-theme($liteflix-dark-theme);
+
+
+.mat-toolbar-multiple-rows {
+  min-height: 40px;
+}
+.mat-toolbar-row, .mat-toolbar-single-row {
+  height: 40px;
+  padding: 0!important;
+}
+
+.mat-toolbar {
+  background-color: transparent;
+
+  .mat-button-base > span {
+    // line-height: 36px;
+    // font-size: 19px;
+    line-height: 40px;
+
+    mat-icon {
+      line-height: 19px;
+      font-weight: 700;
+      height: 19px;
+      width: 19px;
+    }
+  }
+
+  button.mat-icon-button {
+    width: 40px;
+    mat-icon {
+      line-height: 27px;
+      height: 27px;
+      width: 27px;
+    }
+  }
+}

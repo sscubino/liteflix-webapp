@@ -7,11 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './screens/home/home.module';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ToolbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,6 +23,7 @@ import { HomeModule } from './screens/home/home.module';
     HttpClientModule,
     HomeModule,
     MatIconModule,
+    MatToolbarModule,
   ],
   providers: [MatIconRegistry],
   bootstrap: [AppComponent],

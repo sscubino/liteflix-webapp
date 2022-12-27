@@ -1,6 +1,12 @@
 mat-icon.sm-mat-icon {
-  font-size: 14px;
-  height: 14px;
-  width: 14px;
-  line-height: 14px;
+  font-size: 15px;
+  height: 15px;
+  width: 15px;
+  line-height: 15px;
+}
+
+button.mat-button-base {
+  mat-icon.sm-mat-icon {
+    margin-right: 12px;
+  }
 }
