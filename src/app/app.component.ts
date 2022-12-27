@@ -22,6 +22,7 @@ export class AppComponent {
       'play-button-on',
       'plus',
       'arrow',
+      'tick',
     ];
     ICON_NAMES.forEach(iconName => {
       this.matIconRegistry.addSvgIcon(

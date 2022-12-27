@@ -1,13 +1,36 @@
 <div class="movies-list-container">
   <p [matMenuTriggerFor]="menu" class="menu-button">
-    VER: <b>POPULARES <mat-icon svgIcon="arrow"></mat-icon></b>
+    VER:
+    <b>
+      {{ categoryDisplaying() }}
+      <mat-icon svgIcon="arrow" class="sm-mat-icon"></mat-icon>
+    </b>
   </p>
   <mat-menu #menu="matMenu" xPosition="before">
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
+    <button
+      mat-menu-item
+      (click)="display('popular')"
+      [ngClass]="isDisplayingPopular() ? 'selected-item' : ''">
+      POPULARES
+      <mat-icon
+        svgIcon="tick"
+        class="selected-item-icon sm-mat-icon"></mat-icon>
+    </button>
+    <button
+      mat-menu-item
+      (click)="display('my-list')"
+      [ngClass]="isDisplayingMyList() ? 'selected-item' : ''">
+      MI LISTA
+      <mat-icon
+        svgIcon="tick"
+        class="selected-item-icon sm-mat-icon"></mat-icon>
+    </button>
   </mat-menu>
   <div
-    *ngFor="let movie of popularMoviesList; let isLast = last"
+    *ngFor="
+      let movie of isDisplayingPopular() ? popularMoviesList : myMoviesList;
+      let isLast = last
+    "
     class="movie-item-container">
     <app-movie-tumbnail [movie]="movie"></app-movie-tumbnail>
   </div>
