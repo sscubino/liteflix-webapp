@@ -43,8 +43,10 @@ $primary-palette: (
   ),
 );
 $liteflix-primary-palette: mat.define-palette($primary-palette);
-$liteflix-accent-palette: mat.define-palette(mat.$deep-purple-palette);
+$liteflix-accent-palette: mat.define-palette(mat.$grey-palette, A100);
 $liteflix-warn-palette: mat.define-palette(mat.$red-palette);
+
+$liteflix-primary-color: mat.get-color-from-palette($primary-palette, 500);
 
 
 // Typography
@@ -55,15 +57,15 @@ $liteflix-typography-config: mat.define-typography-config(
   $headline: mat.define-typography-level(120px, 100px, 700, $letter-spacing: 16px),
   $title: mat.define-typography-level(20px, 20px, 400, $letter-spacing: 4px),
   $subheading-2: mat.define-typography-level(20px, 20px, 400, $letter-spacing: 4px),
-  $body-1: mat.define-typography-level(16px, 19.2px, 400, $letter-spacing: 4px),
-  $body-2: mat.define-typography-level(16px, 19.2px, 600, $letter-spacing: 4px),
+  $body-1: mat.define-typography-level(16px, 16px, 400, $letter-spacing: 4px),
+  $body-2: mat.define-typography-level(16px, 16px, 600, $letter-spacing: 4px),
   $button: mat.define-typography-level(18px, 21.6px, 400),
 );
 
 @include mat.typography-hierarchy($liteflix-typography-config);
 
 .mat-primary-color-text {
-  color: mat.get-color-from-palette($primary-palette, 500);
+  color: $liteflix-primary-color;
 }
 
 
@@ -86,4 +88,6 @@ $liteflix-dark-theme: mat.define-dark-theme((
 @import './components/menu.scss';
 @import './components/icon.scss';
 @import './components/toolbar.scss';
-
+@import './components/dialog.scss';
+@import './components/input.scss';
+@import './components/form-field.scss';

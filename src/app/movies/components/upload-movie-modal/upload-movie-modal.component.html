@@ -1,0 +1,14 @@
+<div [formGroup]="uploadMovieForm" class="upload-movie-modal-container">
+  <h3 class="mat-primary-color-text"><b>AGREGAR PELÍCULA</b></h3>
+  <app-drag-and-drop-file-input
+    formControlName="movieBackdropFile"></app-drag-and-drop-file-input>
+  <input
+    id="movie-name"
+    type="text"
+    formControlName="movieName"
+    placeholder="TÍTULO" />
+  <button mat-flat-button color="accent">SUBIR PELÍCULA</button>
+  <button mat-icon-button class="close-button" (click)="close()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>

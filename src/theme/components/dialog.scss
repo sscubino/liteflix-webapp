@@ -1,0 +1,8 @@
+@use '@angular/material' as mat;
+
+@include mat.dialog-theme($liteflix-dark-theme);
+
+.mat-dialog-container {
+  padding: 45px!important;
+  position: relative;
+}
