@@ -2,9 +2,7 @@
   class="tumbnail-container"
   [ngStyle]="{
     'background-image':
-      'url(' +
-      movie.backdropURLForWidth(container.offsetWidth, container.offsetHeight) +
-      ')'
+      'url(' + movie.backdrop.url_for_width(container.offsetWidth) + ')'
   }"
   #container>
   <mat-icon svgIcon="play-button"></mat-icon>

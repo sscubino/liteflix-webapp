@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.moviesService.getFeaturedMovie().subscribe(movie => {
       this.featuredMovie = movie;
-      this.featuredMovieBackdropURL = movie.originalBackdropURL();
+      this.featuredMovieBackdropURL = movie.backdrop.original_url;
     });
   }
 }

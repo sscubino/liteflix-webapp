@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesApiService } from '../../services/movies-api.service';
 import { Movie } from '../../models/movie';
+import { MyListApiService } from '../../services/my-list-api.service';
 
 @Component({
   selector: 'app-movies-list',
@@ -14,15 +15,18 @@ export class MoviesListComponent implements OnInit {
   public isLoadingMyMovies = true;
   private isDisplaying: 'popular' | 'my-list' = 'popular';
 
-  constructor(private moviesApiService: MoviesApiService) {}
+  constructor(
+    private moviesApiService: MoviesApiService,
+    private myListService: MyListApiService
+  ) {}
 
   ngOnInit(): void {
     this.moviesApiService.getPopularMovies().subscribe(popularMovies => {
       this.popularMoviesList = popularMovies.slice(0, 4);
       this.isLoadingPopularMovies = false;
     });
-    this.moviesApiService.getPopularMovies().subscribe(myMoviesList => {
-      this.myMoviesList = [];
+    this.myListService.getMyList().subscribe(myMoviesList => {
+      this.myMoviesList = myMoviesList;
       this.isLoadingMyMovies = false;
     });
   }

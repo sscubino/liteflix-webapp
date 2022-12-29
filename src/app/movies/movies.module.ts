@@ -13,6 +13,7 @@ import { MoviesApiService } from './services/movies-api.service';
 import { MoviesListComponent } from './components/movies-list/movies-list.component';
 import { MovieTumbnailComponent } from './components/movie-tumbnail/movie-tumbnail.component';
 import { UploadMovieModalComponent } from './components/upload-movie-modal/upload-movie-modal.component';
+import { MyListApiService } from './services/my-list-api.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { UploadMovieModalComponent } from './components/upload-movie-modal/uploa
     ShareModule,
     ReactiveFormsModule,
   ],
-  providers: [MoviesApiService, CookieService],
+  providers: [MoviesApiService, MyListApiService, CookieService],
   exports: [MoviesListComponent, UploadMovieModalComponent],
 })
 export class MoviesModule {}
