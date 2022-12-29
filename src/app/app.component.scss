@@ -4,17 +4,18 @@
   width: 100%;
 }
 
+mat-sidenav-content {
+  display: flex;
+  flex-direction: column;
+}
+
 .content-container {
-  height: 100%;
-  padding: 0 5%;
+  flex: 1;
+  padding: 0 6%;
 }
 
 .toolbar-contaier {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 32px 0;
+  padding: 32px 0 0;
   // background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 250%);s
 }
 

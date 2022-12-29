@@ -9,10 +9,10 @@ import { MyListApiService } from '../../services/my-list-api.service';
   styleUrls: ['./movies-list.component.scss'],
 })
 export class MoviesListComponent implements OnInit {
-  public popularMoviesList: Movie[] = [];
-  public isLoadingPopularMovies = true;
-  public myMoviesList: Movie[] = [];
-  public isLoadingMyMovies = true;
+  popularMoviesList: Movie[] = [];
+  isLoadingPopularMovies = true;
+  myMoviesList: Movie[] = [];
+  isLoadingMyMovies = true;
   private isDisplaying: 'popular' | 'my-list' = 'popular';
 
   constructor(
@@ -31,19 +31,19 @@ export class MoviesListComponent implements OnInit {
     });
   }
 
-  public display(category: 'popular' | 'my-list'): void {
+  display(category: 'popular' | 'my-list'): void {
     this.isDisplaying = category;
   }
 
-  public isDisplayingPopular(): boolean {
+  isDisplayingPopular(): boolean {
     return this.isDisplaying === 'popular';
   }
 
-  public isDisplayingMyList(): boolean {
+  isDisplayingMyList(): boolean {
     return this.isDisplaying === 'my-list';
   }
 
-  public categoryDisplaying(): string {
+  categoryDisplaying(): string {
     return this.isDisplayingPopular() ? 'POPULAR' : 'MI LISTA';
   }
 }

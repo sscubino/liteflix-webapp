@@ -8,8 +8,8 @@ import { MoviesApiService } from 'src/app/movies/services/movies-api.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  public featuredMovie?: Movie;
-  public featuredMovieBackdropURL?: string;
+  featuredMovie?: Movie;
+  featuredMovieBackdropURL?: string;
 
   constructor(private moviesService: MoviesApiService) {}
 

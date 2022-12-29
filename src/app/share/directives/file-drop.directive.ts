@@ -15,21 +15,21 @@ export class FileDropDirective {
 
   constructor() {}
 
-  @HostListener('dragover', ['$event']) public onDragOver(event: Event) {
+  @HostListener('dragover', ['$event']) onDragOver(event: Event) {
     event.preventDefault();
     event.stopPropagation();
     this.fileOver = true;
     console.log('Drag Over');
   }
 
-  @HostListener('dragleave', ['$event']) public onDragLeave(event: Event) {
+  @HostListener('dragleave', ['$event']) onDragLeave(event: Event) {
     event.preventDefault();
     event.stopPropagation();
     this.fileOver = false;
     console.log('Drag Leave');
   }
 
-  @HostListener('drop', ['$event']) public onDrop(event: DragEvent) {
+  @HostListener('drop', ['$event']) onDrop(event: DragEvent) {
     event.preventDefault();
     event.stopPropagation();
     this.fileOver = false;
