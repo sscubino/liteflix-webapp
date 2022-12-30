@@ -2,10 +2,12 @@
 .drag-and-drop-container {
   box-sizing: border-box;
   border: 1px dashed #FFFFFF;
-  padding: 40px 70px;
+  padding: 16px;
   align-items: center;
+  justify-content: center;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 input {

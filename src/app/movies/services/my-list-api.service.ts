@@ -2,12 +2,17 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Movie, MovieBackdrop } from '../models/movie';
+import { Movie, ResizableImage } from '../models/movie';
 import { PaginatedResult } from '../models/paginated-result';
 
 export interface MovieResult {
   title: string;
   backdrop_path: string;
+}
+
+export interface ImageUploadResult {
+  id: string;
+  file: string;
 }
 
 @Injectable()
@@ -16,18 +21,37 @@ export class MyListApiService {
 
   constructor(private http: HttpClient) {}
 
-  // addMovieToMyList(): Observable<Movie[]> {
-  //   const requestObs = this.http.get<PaginatedResult<MyMovieResult>>(
-  //     this.API_URL + '/movies'
-  //   );
-  //   return requestObs.pipe(
-  //     map((response: PaginatedResult<MyMovieResult>) => {
-  //       const my_list_result = response.results;
-  //       // return my_list_result.map(result => new Movie())
-  //       // return this.movieResultToMovie(movie_result, config);
-  //     })
-  //   );
-  // }
+  getMyList(): Observable<Movie[]> {
+    const requestObs = this.http.get<PaginatedResult<MovieResult>>(
+      this.API_URL + '/movies'
+    );
+
+    return requestObs.pipe(
+      map((response: PaginatedResult<MovieResult>) =>
+        response.results.map(result => this.resultToMovie(result))
+      )
+    );
+  }
+
+  uploadImage(file: File) {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    return this.http.post<ImageUploadResult>(
+      this.API_URL + '/movies/images/',
+      formData,
+      { reportProgress: true, observe: 'events' }
+    );
+  }
+
+  addMovieToMyList(movieForm: {
+    title: string;
+    backdrop: string;
+  }): Observable<Movie> {
+    return this.http
+      .post<MovieResult>(this.API_URL + '/movies/', movieForm)
+      .pipe(map(result => this.resultToMovie(result)));
+  }
 
   private resultToMovie(movie_result: MovieResult): Movie {
     return new Movie(
@@ -35,21 +59,10 @@ export class MyListApiService {
       new BasicMovieBackdrop(movie_result.backdrop_path, this.API_URL)
     );
   }
-
-  getMyList(): Observable<Movie[]> {
-    const requestObs = this.http.get<PaginatedResult<MovieResult>>(
-      this.API_URL + '/movies'
-    );
-    return requestObs.pipe(
-      map((response: PaginatedResult<MovieResult>) =>
-        response.results.map(result => this.resultToMovie(result))
-      )
-    );
-  }
 }
 
-class BasicMovieBackdrop implements MovieBackdrop {
-  public original_url: string;
+class BasicMovieBackdrop implements ResizableImage {
+  original_url: string;
 
   constructor(backdrop_path: string, base_path: string) {
     this.original_url = `${base_path}${backdrop_path}`;

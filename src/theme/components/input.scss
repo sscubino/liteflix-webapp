@@ -16,3 +16,7 @@ input {
 input:focus {
   border-color: $liteflix-primary-color;
 }
+
+input.ng-invalid.ng-touched:not(:focus) {
+  border-color: $liteflix-warn-color;
+}

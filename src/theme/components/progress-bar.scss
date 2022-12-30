@@ -1,0 +1,13 @@
+@use '@angular/material' as mat;
+
+@include mat.progress-bar-theme($liteflix-dark-theme);
+
+.mat-progress-bar-primary {
+  height: 10px!important;
+  top: -3px;
+}
+
+mat-progress-bar.mat-progress-bar {
+  overflow-y: visible;
+  overflow-x: clip;
+}

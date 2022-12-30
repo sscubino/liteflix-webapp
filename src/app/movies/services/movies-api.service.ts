@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AsyncSubject, forkJoin, map, Observable } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
-import { Movie, MovieBackdrop } from '../models/movie';
+import { Movie, ResizableImage } from '../models/movie';
 import { PaginatedResult } from '../models/paginated-result';
 import { environment } from 'src/environments/environment';
 
@@ -126,8 +126,8 @@ export class MoviesApiService {
   }
 }
 
-class ResizableMovieBackdrop implements MovieBackdrop {
-  public original_url: string;
+class ResizableMovieBackdrop implements ResizableImage {
+  original_url: string;
 
   constructor(private backdrop_path: string, private config: ApiConfiguration) {
     this.original_url = `${config.images.secure_base_url}original${backdrop_path}`;

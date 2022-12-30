@@ -47,6 +47,7 @@ $liteflix-accent-palette: mat.define-palette(mat.$grey-palette, A100);
 $liteflix-warn-palette: mat.define-palette(mat.$red-palette);
 
 $liteflix-primary-color: mat.get-color-from-palette($primary-palette, 500);
+$liteflix-warn-color: mat.get-color-from-palette(mat.$red-palette, 500);
 
 
 // Typography
@@ -55,8 +56,8 @@ $liteflix-typography-config: mat.define-typography-config(
   $font-family: 'Bebas Neue',
   $display-4: mat.define-typography-level(120px, 100px, 700, $letter-spacing: 16px),
   $headline: mat.define-typography-level(120px, 100px, 700, $letter-spacing: 16px),
-  $title: mat.define-typography-level(20px, 20px, 400, $letter-spacing: 4px),
-  $subheading-2: mat.define-typography-level(20px, 20px, 400, $letter-spacing: 4px),
+  $title: mat.define-typography-level(32px, 32px, 400, $letter-spacing: 4px),
+  $subheading-2: mat.define-typography-level(26px, 26px, 400, $letter-spacing: 4px),
   $body-1: mat.define-typography-level(16px, 16px, 400, $letter-spacing: 4px),
   $body-2: mat.define-typography-level(16px, 16px, 600, $letter-spacing: 4px),
   $button: mat.define-typography-level(18px, 21.6px, 400),
@@ -90,3 +91,4 @@ $liteflix-dark-theme: mat.define-dark-theme((
 @import './components/toolbar.scss';
 @import './components/dialog.scss';
 @import './components/input.scss';
+@import './components/progress-bar.scss';

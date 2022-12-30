@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Movie } from '../../models/movie';
 
 @Component({
   selector: 'app-upload-movie-modal',
@@ -8,12 +8,13 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./upload-movie-modal.component.scss'],
 })
 export class UploadMovieModalComponent {
-  uploadMovieForm = new FormGroup({
-    movieBackdropFile: new FormControl(),
-    movieName: new FormControl(''),
-  });
+  movieSubmitted?: Movie;
 
   constructor(public dialogRef: MatDialogRef<UploadMovieModalComponent>) {}
+
+  handleMovieSubmitted(movie: Movie) {
+    this.movieSubmitted = movie;
+  }
 
   close() {
     this.dialogRef.close();

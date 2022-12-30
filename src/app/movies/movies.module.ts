@@ -8,18 +8,21 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MoviesApiService } from './services/movies-api.service';
 import { MoviesListComponent } from './components/movies-list/movies-list.component';
 import { MovieTumbnailComponent } from './components/movie-tumbnail/movie-tumbnail.component';
 import { UploadMovieModalComponent } from './components/upload-movie-modal/upload-movie-modal.component';
 import { MyListApiService } from './services/my-list-api.service';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { UploadMovieFormComponent } from './components/upload-movie-form/upload-movie-form.component';
 
 @NgModule({
   declarations: [
     MoviesListComponent,
     MovieTumbnailComponent,
     UploadMovieModalComponent,
+    UploadMovieFormComponent,
   ],
   imports: [
     CommonModule,
@@ -27,8 +30,10 @@ import { MyListApiService } from './services/my-list-api.service';
     MatMenuModule,
     MatButtonModule,
     MatDialogModule,
+    MatProgressBarModule,
     ShareModule,
     ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [MoviesApiService, MyListApiService, CookieService],
   exports: [MoviesListComponent, UploadMovieModalComponent],
