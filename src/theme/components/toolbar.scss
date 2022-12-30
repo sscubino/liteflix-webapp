@@ -1,6 +1,6 @@
 @use '@angular/material' as mat;
 
-@include mat.toolbar-theme($liteflix-dark-theme);
+@include mat.toolbar-color($liteflix-dark-theme);
 
 
 .mat-toolbar-multiple-rows {

@@ -50,9 +50,14 @@ $liteflix-primary-color: mat.get-color-from-palette($primary-palette, 500);
 $liteflix-warn-color: mat.get-color-from-palette(mat.$red-palette, 500);
 
 
+// Responsiveness
+$mobile-max-width: 900px;
+
+
 // Typography
 
-$liteflix-typography-config: mat.define-typography-config(
+
+$liteflix-web-typography-config: mat.define-typography-config(
   $font-family: 'Bebas Neue',
   $display-4: mat.define-typography-level(120px, 100px, 700, $letter-spacing: 16px),
   $headline: mat.define-typography-level(120px, 100px, 700, $letter-spacing: 16px),
@@ -63,7 +68,30 @@ $liteflix-typography-config: mat.define-typography-config(
   $button: mat.define-typography-level(18px, 21.6px, 400),
 );
 
-@include mat.typography-hierarchy($liteflix-typography-config);
+$liteflix-mobile-typography-config: mat.define-typography-config(
+  $font-family: 'Bebas Neue',
+  $display-4: mat.define-typography-level(76px, 76px, 700, $letter-spacing: 12px),
+  $headline: mat.define-typography-level(76px, 76px, 700, $letter-spacing: 12px),
+  $title: mat.define-typography-level(28px, 28px, 400, $letter-spacing: 4px),
+  $subheading-2: mat.define-typography-level(24px, 26px, 400, $letter-spacing: 4px),
+  $body-1: mat.define-typography-level(16px, 16px, 400, $letter-spacing: 4px),
+  $body-2: mat.define-typography-level(16px, 16px, 600, $letter-spacing: 4px),
+  $button: mat.define-typography-level(18px, 21.6px, 400),
+);
+
+$liteflix-typography-config: $liteflix-web-typography-config;
+
+@media (max-width: $mobile-max-width) {
+  $liteflix-typography-config: $liteflix-mobile-typography-config;
+  @include mat.typography-hierarchy($liteflix-mobile-typography-config);
+}
+
+@media (min-width: $mobile-max-width) {
+  $liteflix-typography-config: $liteflix-web-typography-config;
+  @include mat.typography-hierarchy($liteflix-web-typography-config);
+}
+
+// @include mat.typography-hierarchy($liteflix-typography-config);
 
 .mat-primary-color-text {
   color: $liteflix-primary-color;

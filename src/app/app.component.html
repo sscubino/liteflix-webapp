@@ -1,9 +1,41 @@
 <mat-sidenav-container class="app-container">
-  <mat-sidenav #sidenav mode="over" position="end">Sidenav content</mat-sidenav>
+  <mat-sidenav #sidenav mode="over" position="end" [autoFocus]="false">
+    <div class="sidenav-panel">
+      <div class="sidenav-panel-toolbar toolbar-contaier">
+        <div style="flex: 1">
+          <button
+            mat-icon-button
+            class="close-button"
+            (click)="sidenav.close()">
+            <mat-icon style="font-size: 18px">close</mat-icon>
+          </button>
+        </div>
+        <button mat-icon-button>
+          <mat-icon svgIcon="notifications"></mat-icon>
+        </button>
+        <button mat-icon-button class="profile-icon">
+          <img src="assets/icons/default-profile.png" />
+        </button>
+      </div>
+      <p class="nav-button" *ngFor="let navigationBtn of navigationButtons">
+        {{ navigationBtn.label }}
+      </p>
+      <p class="nav-button add-movie-button" (click)="handleAddMovieAction()">
+        <b>
+          <mat-icon svgIcon="plus" class="sm-mat-icon"></mat-icon> AGREGAR
+          PELÍCULA
+        </b>
+      </p>
+      <p class="nav-button">CERRAR SESIÓN</p>
+    </div>
+  </mat-sidenav>
+
   <mat-sidenav-content>
     <div class="toolbar-contaier">
       <div class="content-container">
-        <app-toolbar (openSidenav)="sidenav.open()"></app-toolbar>
+        <app-toolbar
+          (openSidenav)="sidenav.open()"
+          (openAddMovie)="handleAddMovieAction()"></app-toolbar>
       </div>
     </div>
     <div class="content-container">

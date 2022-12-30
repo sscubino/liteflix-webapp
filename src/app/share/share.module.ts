@@ -6,6 +6,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { DragAndDropFileInputComponent } from './components/drag-and-drop-file-input/drag-and-drop-file-input.component';
 import { FileDropDirective } from './directives/file-drop.directive';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,13 @@ import { FileDropDirective } from './directives/file-drop.directive';
     DragAndDropFileInputComponent,
     FileDropDirective,
   ],
-  imports: [CommonModule, MatIconModule, MatToolbarModule, MatButtonModule],
+  imports: [
+    CommonModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule,
+    LayoutModule,
+  ],
   exports: [ToolbarComponent, DragAndDropFileInputComponent],
 })
 export class ShareModule {}

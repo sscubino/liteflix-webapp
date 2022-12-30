@@ -19,6 +19,58 @@ mat-sidenav-content {
   // background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 250%);s
 }
 
-mat-sidenav {
-  padding: 20px;
+.sidenav-panel {
+  width: 600px;
+  padding: 0 6vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-button {
+  font-size: 22px;
+  line-height: 62px;
+}
+
+.nav-button:hover {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.add-movie-button {
+  margin: 20px 0 30px;
+}
+
+.sidenav-panel-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10%;
+  height: 40px;
+
+  mat-icon {
+    height: 27px;
+    width: 27px;
+    line-height: 27px;
+    font-size: 27px!important;
+  }
+
+  button {
+    margin-left: 35px
+  }
+
+  .profile-icon {
+    border-radius: 50%;
+
+    img {
+      display: block;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+    }
+  }
+
+  .close-button {
+    margin: 0;
+    width: 27px;
+  }
 }

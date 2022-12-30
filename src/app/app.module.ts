@@ -5,10 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconRegistry } from '@angular/material/icon';
+import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './screens/home/home.module';
 import { ShareModule } from './share/share.module';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,8 @@ import { ShareModule } from './share/share.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
     HttpClientModule,
     HomeModule,
     ShareModule,

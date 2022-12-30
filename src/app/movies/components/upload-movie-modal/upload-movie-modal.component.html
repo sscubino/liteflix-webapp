@@ -8,7 +8,9 @@
       <h3><b>¡FELICITACIONES!</b></h3>
       <p>{{ movieSubmitted.title }} fue correctamente subida.</p>
     </div>
-    <button mat-flat-button (click)="close()" color="accent">IR A HOME</button>
+    <button mat-flat-button (click)="close()" color="accent" routerLink="/">
+      IR A HOME
+    </button>
   </div>
 
   <button mat-icon-button class="close-button" (click)="close()">

@@ -28,9 +28,12 @@
 }
 
 .featured-movie-details {
-  margin-bottom: 17vh;
+  margin-bottom: 15vh;
+  display: inline-block;
+  word-break: break-word;
 
   button:first-of-type {
     margin-right: 24px;
+    margin-bottom: 12px;
   }
 }
