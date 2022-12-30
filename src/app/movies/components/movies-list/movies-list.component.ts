@@ -44,6 +44,6 @@ export class MoviesListComponent implements OnInit {
   }
 
   categoryDisplaying(): string {
-    return this.isDisplayingPopular() ? 'POPULAR' : 'MI LISTA';
+    return this.isDisplayingPopular() ? 'POPULARES' : 'MIS PELICULAS';
   }
 }
