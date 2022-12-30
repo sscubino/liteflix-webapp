@@ -38,9 +38,8 @@ export class UploadMovieFormComponent {
 
   handleFileDrop() {
     if (!this.backdrop_file) return;
-    this.myListApiService
-      .uploadImage(this.backdrop_file)
-      .subscribe((event: HttpEvent<ImageUploadResult>) => {
+    this.myListApiService.uploadImage(this.backdrop_file).subscribe(
+      (event: HttpEvent<ImageUploadResult>) => {
         switch (event.type) {
           case HttpEventType.Sent:
             this.file_upload_status = 'uploading';
@@ -49,19 +48,22 @@ export class UploadMovieFormComponent {
           case HttpEventType.ResponseHeader:
             break;
           case HttpEventType.UploadProgress:
-            if (!event.total) return;
+            if (!event.total || this.file_upload_status !== 'uploading') return;
             this.file_upload_progress = Math.round(
               (event.loaded / event.total) * 100
             );
             break;
           case HttpEventType.Response:
-            const successful = event.status === 201;
-            this.file_upload_status = successful ? 'success' : 'error';
+            this.file_upload_status = 'success';
             this.file_upload_progress = 100;
-            successful &&
-              this.uploadMovieForm.get('backdrop')?.setValue(event.body?.id);
+            this.uploadMovieForm.get('backdrop')?.setValue(event.body?.id);
         }
-      });
+      },
+      _error => {
+        this.file_upload_status = 'error';
+        this.file_upload_progress = 100;
+      }
+    );
   }
 
   handleUploadCancel() {

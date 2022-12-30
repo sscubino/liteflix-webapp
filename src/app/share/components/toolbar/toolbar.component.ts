@@ -21,6 +21,7 @@ export class ToolbarComponent {
     this.dialog.open(UploadMovieModalComponent, {
       width: '730px',
       autoFocus: false,
+      restoreFocus: false,
     });
   }
 }

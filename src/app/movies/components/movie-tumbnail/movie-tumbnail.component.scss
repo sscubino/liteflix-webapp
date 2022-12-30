@@ -1,6 +1,6 @@
 .tumbnail-container {
-  height: 146px;
-  width: 220px;
+  height: 114px;
+  width: 188px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -13,12 +13,18 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  padding: 16px;
 }
 
 .movie-title {
-  text-align: center;
+  z-index: 2;
+}
+
+.movie-title > p {
+  margin: 0;
+
   max-lines: 2;
-  text-overflow: ellipsis;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -31,14 +37,17 @@
 
 mat-icon {
   margin:0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   height: 40px;
   width: 40px;
   line-height: 40px;
   z-index: 2;
+}
+
+mat-icon.sm-play-button {
+  height: 24px;
+  width: 24px;
+  min-width: 24px;
+  line-height: 24px;
 }
 
 .title-fading {
@@ -47,9 +56,82 @@ mat-icon {
   height: 100px;
   left: 0;
   bottom: 0;
-
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 22.78%, #000000 122.69%);
   border-radius: 4px;
+}
 
-  z-index: 1;
+.movie-details {
+  display: none;
+}
+
+// With no focus
+.movie-title > p {
+  text-align: center;
+}
+
+mat-icon.sm-play-button {
+  display: none;
+}
+
+mat-icon.lg-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title-fading {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 22.78%, #000000 122.69%);
+}
+
+// With focus
+
+.tumbnail-focus, .tumbnail-container:hover {
+  .movie-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 2;
+    margin-top: 12px;
+  }
+
+  .movie-title {
+    flex-direction: row;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    p {
+      text-align: left;
+      line-height: 20px;
+      margin-bottom: 5px;
+
+      max-lines: 3;
+      -webkit-line-clamp: 3;
+              line-clamp: 3;
+    }
+  }
+
+  mat-icon.sm-play-button {
+    display: inline-block;
+    margin-right: 12px;
+    border-radius: 50%;
+  }
+
+  mat-icon.lg-play-button {
+    display: none;
+  }
+
+  .play-button-container {
+    mat-icon.sm-play-button.active { display: none }
+    mat-icon.sm-play-button.unactive { display: inline-block }
+  }
+  .play-button-container:hover {
+    cursor: pointer;
+    mat-icon.sm-play-button.active { display: inline-block }
+    mat-icon.sm-play-button.unactive { display: none }
+  }
+
+  .title-fading {
+    background: rgba(36, 36, 36, 0.7);
+    height: 100%;
+  }
 }

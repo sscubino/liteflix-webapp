@@ -9,6 +9,13 @@ import { Movie } from '../../models/movie';
 export class MovieTumbnailComponent {
   @Input()
   movie!: Movie;
+  tumbnailContainerClass = '';
+  focus = false;
 
   constructor() {}
+
+  handleClick() {
+    this.focus = !this.focus;
+    this.tumbnailContainerClass = this.focus ? 'tumbnail-focus' : '';
+  }
 }

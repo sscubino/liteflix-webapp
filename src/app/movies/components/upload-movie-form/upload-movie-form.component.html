@@ -10,7 +10,7 @@
 
     <div class="file-upload-container" *ngIf="backdrop_file">
       <p class="upload-detail" *ngIf="file_upload_status === 'uploading'">
-        CARGANDO <b>{{ file_upload_status }}%</b>
+        CARGANDO <b>{{ file_upload_progress }}%</b>
       </p>
       <p class="upload-detail" *ngIf="file_upload_status === 'error'">
         <b>¡ERROR!</b> NO SE PUDO CARGAR LA PELÍCULA
@@ -24,7 +24,21 @@
           [color]="file_upload_status === 'error' ? 'warn' : 'primary'">
         </mat-progress-bar>
       </div>
-      <a class="upload-cancel-button">CANCELAR</a>
+      <p
+        class="upload-cancel-button upload-action"
+        *ngIf="file_upload_status === 'uploading'">
+        CANCELAR
+      </p>
+      <p
+        class="upload-retry-button upload-action"
+        *ngIf="file_upload_status === 'error'">
+        REINTENTAR
+      </p>
+      <p
+        class="upload-success upload-action"
+        *ngIf="file_upload_status === 'success'">
+        ¡LISTO!
+      </p>
     </div>
   </div>
 
