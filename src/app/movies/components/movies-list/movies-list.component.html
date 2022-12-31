@@ -26,12 +26,14 @@
         class="selected-item-icon sm-mat-icon"></mat-icon>
     </button>
   </mat-menu>
-  <div
-    *ngFor="
-      let movie of isDisplayingPopular() ? popularMoviesList : myMoviesList;
-      let isLast = last
-    "
-    class="movie-item-container">
-    <app-movie-tumbnail [movie]="movie"></app-movie-tumbnail>
+  <div class="list-container">
+    <div
+      *ngFor="
+        let movie of isDisplayingPopular() ? popularMoviesList : myMoviesList;
+        let isLast = last
+      "
+      class="movie-item-container">
+      <app-movie-tumbnail [movie]="movie"></app-movie-tumbnail>
+    </div>
   </div>
 </div>

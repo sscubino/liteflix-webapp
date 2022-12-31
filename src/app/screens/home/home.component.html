@@ -1,17 +1,20 @@
-<div class="home-container">
+<div class="home-container" [ngClass]="{ 'is-movile-layout': isMobileLayout }">
   <div class="featured-movie-container">
     <div class="featured-movie-details">
       <h3>ORIGINAL DE <b style="line-height: 20px">LITEFLIX</b></h3>
       <h1 class="mat-primary-color-text">
         {{ featuredMovie?.title }}
       </h1>
-      <button mat-flat-button>
-        <mat-icon svgIcon="play" class="sm-mat-icon"></mat-icon>REPRODUCIR
-      </button>
-      <button mat-stroked-button>
-        <mat-icon svgIcon="plus" class="sm-mat-icon"></mat-icon>MI LISTA
-      </button>
+      <div class="buttons-container">
+        <button mat-flat-button>
+          <mat-icon svgIcon="play" class="sm-mat-icon"></mat-icon>REPRODUCIR
+        </button>
+        <button mat-stroked-button>
+          <mat-icon svgIcon="plus" class="sm-mat-icon"></mat-icon>MI LISTA
+        </button>
+      </div>
     </div>
+    <div class="title-fading"></div>
   </div>
   <div class="trending-movies-container">
     <app-movies-list></app-movies-list>

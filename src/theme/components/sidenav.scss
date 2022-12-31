@@ -1,7 +1,7 @@
 @use '@angular/material' as mat;
 
 $sidenav-background-palette: (
-    background: #191919,
+    background: $primary-background-color,
     card:       #ffffff,
     dialog:     rgba(36, 36, 36, 0.9)
 );
