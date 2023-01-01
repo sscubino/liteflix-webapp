@@ -1,3 +1,4 @@
+import { Platform } from '@angular/cdk/platform';
 import { Component } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -15,11 +16,14 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class DragAndDropFileInputComponent implements ControlValueAccessor {
   value?: File;
+  isBrowser: boolean;
 
   onChange = (_file: File) => null;
   onTouched = () => null;
 
-  constructor() {}
+  constructor(platform: Platform) {
+    this.isBrowser = platform.isBrowser;
+  }
 
   fileBrowserHangler(event: Event) {
     const input: HTMLInputElement = event.target as HTMLInputElement;

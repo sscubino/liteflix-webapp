@@ -8,12 +8,22 @@
       <h3><b>¡FELICITACIONES!</b></h3>
       <p>{{ movieSubmitted.title }} fue correctamente subida.</p>
     </div>
-    <button mat-flat-button (click)="close()" color="accent" routerLink="/">
-      IR A HOME
-    </button>
+    <button mat-flat-button color="accent" (click)="close()">IR A HOME</button>
   </div>
 
-  <button mat-icon-button class="close-button" (click)="close()">
+  <button
+    mat-icon-button
+    class="close-button"
+    (click)="close()"
+    *ngIf="!isMobileLayout">
     <mat-icon>close</mat-icon>
+  </button>
+  <button
+    mat-flat-button
+    (click)="close()"
+    color="accent"
+    *ngIf="isMobileLayout && !movieSubmitted"
+    style="margin-top: 12px">
+    SALIR
   </button>
 </div>

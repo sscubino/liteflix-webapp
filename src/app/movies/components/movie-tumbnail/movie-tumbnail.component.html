@@ -1,37 +1,36 @@
-<div [ngClass]="{ 'is-mobile-layout': isMobileLayout }">
-  <div
-    #container
-    class="tumbnail-container"
-    [ngClass]="{
-      'is-mobile-layout': isMobileLayout,
-      'tumbnail-focus': focus
-    }"
-    (click)="handleClick()"
-    [ngStyle]="{
-      'background-image':
-        'url(' + movie.backdrop.url_for_width(container.offsetWidth) + ')'
-    }">
-    <mat-icon svgIcon="play-button" class="lg-play-button"></mat-icon>
+<div
+  class="tumbnail-container"
+  [ngClass]="{
+    'is-mobile-layout': isMobileLayout,
+    'tumbnail-focus': focus
+  }"
+  (click)="handleClick()"
+  [ngStyle]="{
+    'background-image': 'url(' + movie.backdrop.url_for_width(width) + ')'
+  }">
+  <mat-icon svgIcon="play-button" class="lg-play-button"></mat-icon>
+  <div class="title-fading"></div>
+  <div class="movie-title">
+    <div class="play-button-container">
+      <mat-icon
+        svgIcon="play-button"
+        class="sm-play-button unactive"></mat-icon>
+      <mat-icon
+        svgIcon="play-button-on"
+        class="sm-play-button active"></mat-icon>
+    </div>
+    <p>{{ movie.title }}</p>
+  </div>
+  <div class="movie-details">
+    <mat-icon class="mat-primary-color-text start-icon">star</mat-icon>
+    {{ movie.vote_average }}
+    <span style="text-align: end; flex: 1">{{
+      movie.release_date?.getFullYear()
+    }}</span>
+  </div>
+  <div class="view" [hidden]="true">
+    <mat-icon svgIcon="play-button"></mat-icon>
     <div class="title-fading"></div>
-    <div class="movie-title">
-      <div class="play-button-container">
-        <mat-icon
-          svgIcon="play-button"
-          class="sm-play-button unactive"></mat-icon>
-        <mat-icon
-          svgIcon="play-button-on"
-          class="sm-play-button active"></mat-icon>
-      </div>
-      <p>{{ movie.title }}</p>
-    </div>
-    <div class="movie-details">
-      <span>{{ movie.vote_average }}</span>
-      <span>{{ movie.release_date?.getFullYear() }}</span>
-    </div>
-    <div class="view" [hidden]="true">
-      <mat-icon svgIcon="play-button"></mat-icon>
-      <div class="title-fading"></div>
-      <p class="movie-title">{{ movie.title }}</p>
-    </div>
+    <p class="movie-title">{{ movie.title }}</p>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../../models/movie';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
@@ -7,9 +7,9 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
   templateUrl: './movie-tumbnail.component.html',
   styleUrls: ['./movie-tumbnail.component.scss'],
 })
-export class MovieTumbnailComponent {
-  @Input()
-  movie!: Movie;
+export class MovieTumbnailComponent implements OnInit {
+  @Input() movie!: Movie;
+  @Input() width!: number;
   focus = false;
   isMobileLayout = false;
 

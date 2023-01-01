@@ -1,4 +1,4 @@
-<div class="movies-list-container">
+<div class="movies-list-container" #container>
   <p [matMenuTriggerFor]="menu" class="menu-button">
     VER:
     <b>
@@ -33,7 +33,9 @@
         let isLast = last
       "
       class="movie-item-container">
-      <app-movie-tumbnail [movie]="movie"></app-movie-tumbnail>
+      <app-movie-tumbnail
+        [movie]="movie"
+        [width]="container.offsetWidth"></app-movie-tumbnail>
     </div>
   </div>
 </div>

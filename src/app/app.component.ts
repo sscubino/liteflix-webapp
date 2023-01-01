@@ -63,9 +63,12 @@ export class AppComponent {
   handleAddMovieAction() {
     this.sidenavRef.close();
     this.dialog.open(UploadMovieModalComponent, {
-      width: '730px',
+      width: this.isMobileLayout ? '100vw' : '730px',
+      height: this.isMobileLayout ? 'calc(100vh - 62px)' : undefined,
+      maxWidth: this.isMobileLayout ? 'none' : undefined,
       autoFocus: false,
       restoreFocus: false,
+      position: this.isMobileLayout ? { top: '62px' } : undefined,
     });
   }
 }

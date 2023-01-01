@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './screens/home/home.module';
 import { ShareModule } from './share/share.module';
 import { MatButtonModule } from '@angular/material/button';
+import { UploadMovieModule } from './screens/upload-movie/upload-movie.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,8 +22,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
     MatIconModule,
     HttpClientModule,
-    HomeModule,
     ShareModule,
+    HomeModule,
+    UploadMovieModule,
   ],
   providers: [MatIconRegistry],
   bootstrap: [AppComponent],
