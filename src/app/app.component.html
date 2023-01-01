@@ -1,4 +1,6 @@
-<mat-sidenav-container class="app-container">
+<mat-sidenav-container
+  class="app-container"
+  [ngClass]="{ 'is-movile-layout': isMobileLayout }">
   <mat-sidenav #sidenav mode="over" position="end" [autoFocus]="false">
     <div class="sidenav-panel">
       <div class="sidenav-panel-toolbar toolbar-contaier">
@@ -38,7 +40,7 @@
           (openAddMovie)="handleAddMovieAction()"></app-toolbar>
       </div>
     </div>
-    <div class="content-container">
+    <div class="content-container router-container">
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>

@@ -30,8 +30,12 @@ button.mat-icon-button {
   height: 40px;
   mat-icon.mat-icon {
     width: 40px;
-    height: 40px;
+    height: 100%;
     line-height: 40px;
   }
   line-height: unset;
+}
+
+.mat-icon-button .mat-button-wrapper > * {
+  vertical-align: unset!important;
 }

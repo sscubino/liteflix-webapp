@@ -14,7 +14,14 @@
   background-repeat: no-repeat;
   background-size: cover;
 
-  padding: 16px;
+  padding: 16px 0;
+}
+
+.tumbnail-container.is-mobile-layout {
+  height: 44vw;
+  width: 88vw;
+  max-height: 250px;
+  max-width: 500px;
 }
 
 .movie-title {

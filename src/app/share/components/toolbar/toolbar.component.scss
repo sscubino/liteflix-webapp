@@ -1,3 +1,13 @@
+
+mat-toolbar {
+  margin: 32px 0 0;
+}
+mat-toolbar.mobile-layout {
+  margin: 12px 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
 .app-title {
   margin: 0;
 }
@@ -19,4 +29,10 @@
 
 button {
   margin-left: 35px
+}
+
+.mobile-layout {
+  button {
+    margin-left: 0
+  }
 }

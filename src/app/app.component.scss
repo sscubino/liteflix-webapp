@@ -14,13 +14,25 @@ mat-sidenav-content {
   padding: 0 6%;
 }
 
+.router-container {
+  padding-top: 62px;
+}
+
 .toolbar-contaier {
-  padding: 32px 0 0;
-  // background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 250%);s
+  width: 100%;
+  z-index: 4;
+}
+
+mat-sidenav-content {
+  .toolbar-contaier {
+    position:fixed;
+    top:0;
+  }
 }
 
 .sidenav-panel {
   width: 600px;
+  max-width: 88vw;
   padding: 0 6vw;
   display: flex;
   flex-direction: column;
@@ -44,7 +56,7 @@ mat-sidenav-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10%;
+  margin: 32px 0 10%;
   height: 40px;
 
   mat-icon {
@@ -72,5 +84,11 @@ mat-sidenav-content {
   .close-button {
     margin: 0;
     width: 27px;
+  }
+}
+
+.is-movile-layout {
+  .sidenav-panel-toolbar {
+    margin-top: 12px;
   }
 }

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Movie } from '../../models/movie';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-movie-tumbnail',
@@ -9,13 +10,18 @@ import { Movie } from '../../models/movie';
 export class MovieTumbnailComponent {
   @Input()
   movie!: Movie;
-  tumbnailContainerClass = '';
   focus = false;
+  isMobileLayout = false;
 
-  constructor() {}
+  constructor(private breackpointObs: BreakpointObserver) {}
+
+  ngOnInit(): void {
+    this.breackpointObs
+      .observe([Breakpoints.XSmall, Breakpoints.Small])
+      .subscribe(result => (this.isMobileLayout = result.matches));
+  }
 
   handleClick() {
     this.focus = !this.focus;
-    this.tumbnailContainerClass = this.focus ? 'tumbnail-focus' : '';
   }
 }
