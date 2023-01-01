@@ -1,29 +1,9 @@
-<div class="upload-movie-modal-container">
-  <app-upload-movie-form
-    (movieSubmitted)="handleMovieSubmitted($event)"
-    *ngIf="!movieSubmitted"></app-upload-movie-form>
-  <div class="movie-uploaded-message-container" *ngIf="movieSubmitted">
-    <h2 class="mat-primary-color-text"><b>LITE</b>FLIX</h2>
-    <div>
-      <h3><b>¡FELICITACIONES!</b></h3>
-      <p>{{ movieSubmitted.title }} fue correctamente subida.</p>
-    </div>
-    <button mat-flat-button color="accent" (click)="close()">IR A HOME</button>
-  </div>
+<app-upload-movie-form (navigateHome)="close()"></app-upload-movie-form>
 
-  <button
-    mat-icon-button
-    class="close-button"
-    (click)="close()"
-    *ngIf="!isMobileLayout">
-    <mat-icon>close</mat-icon>
-  </button>
-  <button
-    mat-flat-button
-    (click)="close()"
-    color="accent"
-    *ngIf="isMobileLayout && !movieSubmitted"
-    style="margin-top: 12px">
-    SALIR
-  </button>
-</div>
+<button
+  mat-icon-button
+  class="close-button"
+  (click)="close()"
+  *ngIf="!isMobileLayout">
+  <mat-icon>close</mat-icon>
+</button>

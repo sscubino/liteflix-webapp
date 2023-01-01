@@ -5,6 +5,7 @@ import { UploadMovieModalComponent } from './movies/components/upload-movie-moda
 import { MatDialog } from '@angular/material/dialog';
 import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -30,7 +31,8 @@ export class AppComponent {
     private matIconRegistry: MatIconRegistry,
     private sanitizer: DomSanitizer,
     private dialog: MatDialog,
-    private breackpointObs: BreakpointObserver
+    private breackpointObs: BreakpointObserver,
+    private router: Router
   ) {
     this.registerIcons();
     this.breackpointObs
@@ -62,13 +64,15 @@ export class AppComponent {
 
   handleAddMovieAction() {
     this.sidenavRef.close();
-    this.dialog.open(UploadMovieModalComponent, {
-      width: this.isMobileLayout ? '100vw' : '730px',
-      height: this.isMobileLayout ? 'calc(100vh - 62px)' : undefined,
-      maxWidth: this.isMobileLayout ? 'none' : undefined,
-      autoFocus: false,
-      restoreFocus: false,
-      position: this.isMobileLayout ? { top: '62px' } : undefined,
-    });
+    this.isMobileLayout
+      ? this.router.navigateByUrl('/subir-una-pelicula')
+      : this.dialog.open(UploadMovieModalComponent, {
+          width: this.isMobileLayout ? '100vw' : '730px',
+          height: this.isMobileLayout ? 'calc(100vh - 62px)' : undefined,
+          maxWidth: this.isMobileLayout ? 'none' : undefined,
+          autoFocus: false,
+          restoreFocus: false,
+          position: this.isMobileLayout ? { top: '62px' } : undefined,
+        });
   }
 }

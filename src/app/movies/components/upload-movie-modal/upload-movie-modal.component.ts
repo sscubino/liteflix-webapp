@@ -30,6 +30,6 @@ export class UploadMovieModalComponent implements OnInit {
   }
 
   close() {
-    this.dialogRef ? this.dialogRef.close() : this.router.navigate(['/']);
+    this.dialogRef.close();
   }
 }

@@ -1,21 +1,34 @@
-import { HttpEvent, HttpEventType } from '@angular/common/http';
-import { Component, EventEmitter, Output } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
-import {
-  MyListApiService,
-  ImageUploadResult,
-} from '../../services/my-list-api.service';
-import { UploadMovieModalComponent } from '../upload-movie-modal/upload-movie-modal.component';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Movie } from '../../models/movie';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  ImageUploadResult,
+  MyListApiService,
+} from '../../services/my-list-api.service';
+import { HttpEvent, HttpEventType } from '@angular/common/http';
 
 @Component({
   selector: 'app-upload-movie-form',
   templateUrl: './upload-movie-form.component.html',
   styleUrls: ['./upload-movie-form.component.scss'],
 })
-export class UploadMovieFormComponent {
-  @Output() movieSubmitted = new EventEmitter<Movie>();
+export class UploadMovieFormComponent implements OnInit {
+  isMobileLayout = false;
+  movieSubmitted?: Movie;
+
+  @Output() navigateHome = new EventEmitter<void>();
+
+  constructor(
+    private breackpointObs: BreakpointObserver,
+    private myListApiService: MyListApiService
+  ) {}
+
+  ngOnInit(): void {
+    this.breackpointObs
+      .observe([Breakpoints.XSmall, Breakpoints.Small])
+      .subscribe(result => (this.isMobileLayout = result.matches));
+  }
 
   uploadMovieForm = new FormGroup({
     backdrop: new FormControl('', Validators.required),
@@ -30,11 +43,6 @@ export class UploadMovieFormComponent {
   file_upload_progress?: number;
 
   formIsSubmitting = false;
-
-  constructor(
-    public dialogRef: MatDialogRef<UploadMovieModalComponent>,
-    private myListApiService: MyListApiService
-  ) {}
 
   handleFileDrop() {
     if (!this.backdrop_file) return;
@@ -77,8 +85,12 @@ export class UploadMovieFormComponent {
     this.myListApiService
       .addMovieToMyList(this.uploadMovieForm.getRawValue())
       .subscribe(movie => {
-        this.movieSubmitted.emit(movie);
+        this.movieSubmitted = movie;
         this.formIsSubmitting = false;
       });
+  }
+
+  handleClose() {
+    this.navigateHome.emit();
   }
 }

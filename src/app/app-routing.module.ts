@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './screens/home/home.component';
-import { UploadMovieComponent } from './screens/upload-movie/upload-movie.component';
+import { UploadMoviePageComponent } from './screens/upload-movie/upload-movie.component';
 
 const routes: Routes = [
   {
@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'subir-una-pelicula',
-    component: UploadMovieComponent,
+    component: UploadMoviePageComponent,
   },
 ];
 

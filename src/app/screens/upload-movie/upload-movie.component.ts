@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-upload-movie',
+  selector: 'app-upload-movie-page',
   templateUrl: './upload-movie.component.html',
-  styleUrls: ['./upload-movie.component.scss']
+  styleUrls: ['./upload-movie.component.scss'],
 })
-export class UploadMovieComponent implements OnInit {
+export class UploadMoviePageComponent {
+  constructor(private router: Router) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  handleNavigateHome() {
+    this.router.navigateByUrl('/');
   }
-
 }

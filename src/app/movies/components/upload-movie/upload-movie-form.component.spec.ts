@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UploadMovieFormComponent } from './upload-movie-form.component';
 
-describe('UploadMovieFormComponent', () => {
+describe('UploadMovieComponent', () => {
   let component: UploadMovieFormComponent;
   let fixture: ComponentFixture<UploadMovieFormComponent>;
 
