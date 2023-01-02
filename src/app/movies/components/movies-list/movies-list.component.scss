@@ -2,13 +2,13 @@
   height: 18px;
 }
 
-.movie-item-container {
+.movie-item-container:not(:first-child) {
   margin-top: 18px;
 }
 
 .menu-button {
   text-align: center;
-  margin-bottom: 12px;
+  margin-bottom: 26px;
   font-size: 18px;
   line-height: 18px;
 
@@ -37,10 +37,9 @@
   }
 }
 
-.list-container {
-  overflow-y: auto;
-}
-
-.movies-list-container {
-  min-height: 690px;
+.movies-list-container:not(.is-mobile-layout) {
+  .list-container {
+    height: min(65vh, 650px);
+    overflow-y: auto;
+  }
 }

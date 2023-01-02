@@ -1,4 +1,6 @@
-<div class="movies-list-container">
+<div
+  class="movies-list-container"
+  [ngClass]="{ 'is-mobile-layout': isMobileLayout }">
   <p [matMenuTriggerFor]="menu" class="menu-button">
     VER:
     <b>
