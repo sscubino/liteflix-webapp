@@ -56,7 +56,8 @@
 .title-fading {
   display: none;
   position: absolute;
-  width: 100%;
+  width: 100vw;
+  margin: 0 -7vw;
   height: 35vh;
   left: 0;
   bottom: 0;
@@ -70,7 +71,8 @@
 
 
   .featured-movie-container {
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 72px);
+    position: relative;
     margin-right: 0;
     .featured-movie-details {
       margin-bottom: 40px;

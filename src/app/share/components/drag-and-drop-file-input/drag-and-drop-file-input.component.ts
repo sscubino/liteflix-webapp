@@ -22,7 +22,7 @@ export class DragAndDropFileInputComponent implements ControlValueAccessor {
   onTouched = () => null;
 
   constructor(platform: Platform) {
-    this.isBrowser = platform.isBrowser;
+    this.isBrowser = !platform.ANDROID && !platform.IOS;
   }
 
   fileBrowserHangler(event: Event) {

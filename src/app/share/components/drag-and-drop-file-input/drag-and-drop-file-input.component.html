@@ -1,7 +1,8 @@
 <div
   class="drag-and-drop-container"
   appFileDrop
-  (fileDropped)="onFileDropped($event)">
+  (fileDropped)="onFileDropped($event)"
+  (click)="fileDropRef.click()">
   <input
     type="file"
     #fileDropRef
