@@ -4,7 +4,7 @@
   <mat-sidenav #sidenav mode="over" position="end" [autoFocus]="false">
     <div class="sidenav-panel">
       <div class="sidenav-panel-toolbar toolbar-contaier">
-        <div style="flex: 1">
+        <div class="close-button-container">
           <button
             mat-icon-button
             class="close-button"
@@ -12,7 +12,10 @@
             <mat-icon style="font-size: 18px">close</mat-icon>
           </button>
         </div>
-        <button mat-icon-button>
+        <h2 class="app-title mat-primary-color-text" *ngIf="isMobileLayout">
+          <b>LITE</b>FLIX
+        </h2>
+        <button mat-icon-button *ngIf="!isMobileLayout">
           <mat-icon svgIcon="notifications"></mat-icon>
         </button>
         <button mat-icon-button class="profile-icon">

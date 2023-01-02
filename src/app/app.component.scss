@@ -32,7 +32,7 @@ mat-sidenav-content {
 
 .sidenav-panel {
   width: 600px;
-  max-width: 88vw;
+  max-width: 86vw;
   padding: 0 7vw;
   display: flex;
   flex-direction: column;
@@ -81,6 +81,10 @@ mat-sidenav-content {
     }
   }
 
+  .close-button-container {
+    flex: 1
+  }
+
   .close-button {
     margin: 0;
     width: 27px;
@@ -88,7 +92,22 @@ mat-sidenav-content {
 }
 
 .is-movile-layout {
+  .sidenav-panel {
+    width: 100vw;
+  }
   .sidenav-panel-toolbar {
     margin-top: 12px;
   }
+  .close-button-container {
+    flex: none
+  }
+  button {
+    margin-left: 0;
+    width: 40px!important;
+    text-align: left;
+  }
+}
+
+h2 {
+  margin: 0;
 }
