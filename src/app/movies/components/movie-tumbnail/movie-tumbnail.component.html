@@ -1,13 +1,14 @@
 <div
+  #container
   class="tumbnail-container"
   [ngClass]="{
     'is-mobile-layout': isMobileLayout,
     'tumbnail-focus': focus
   }"
   (click)="handleClick()"
-  [ngStyle]="{
-    'background-image': 'url(' + movie.backdrop.url_for_width(width) + ')'
-  }">
+  [ngStyle]="
+    backdropURL ? { 'background-image': 'url(' + backdropURL + ')' } : {}
+  ">
   <mat-icon svgIcon="play-button" class="lg-play-button"></mat-icon>
   <div class="title-fading"></div>
   <div class="movie-title">

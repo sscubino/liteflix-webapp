@@ -67,12 +67,9 @@ export class AppComponent {
     this.isMobileLayout
       ? this.router.navigateByUrl('/subir-una-pelicula')
       : this.dialog.open(UploadMovieModalComponent, {
-          width: this.isMobileLayout ? '100vw' : '730px',
-          height: this.isMobileLayout ? 'calc(100vh - 62px)' : undefined,
-          maxWidth: this.isMobileLayout ? 'none' : undefined,
+          width: '730px',
           autoFocus: false,
           restoreFocus: false,
-          position: this.isMobileLayout ? { top: '62px' } : undefined,
         });
   }
 }

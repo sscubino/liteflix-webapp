@@ -21,13 +21,25 @@ export class MoviesListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.fetchPopularMovies();
+    this.fetchMyMoviesList();
+    this.myListService.newMovieUploadedEvent.subscribe(() => {
+      this.isLoadingMyMovies = true;
+      this.fetchMyMoviesList();
+    });
+  }
+
+  private fetchMyMoviesList() {
+    this.myListService.getMyList().subscribe(myMoviesList => {
+      this.myMoviesList = myMoviesList.slice(0, 4);
+      this.isLoadingMyMovies = false;
+    });
+  }
+
+  private fetchPopularMovies() {
     this.moviesApiService.getPopularMovies().subscribe(popularMovies => {
       this.popularMoviesList = popularMovies.slice(0, 4);
       this.isLoadingPopularMovies = false;
-    });
-    this.myListService.getMyList().subscribe(myMoviesList => {
-      this.myMoviesList = myMoviesList;
-      this.isLoadingMyMovies = false;
     });
   }
 

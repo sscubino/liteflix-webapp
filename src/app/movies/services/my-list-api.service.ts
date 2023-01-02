@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable, Subject, map, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Movie, ResizableImage } from '../models/movie';
 import { PaginatedResult } from '../models/paginated-result';
@@ -18,6 +18,7 @@ export interface ImageUploadResult {
 @Injectable()
 export class MyListApiService {
   private readonly API_URL = environment.my_movies_list_api_base_url;
+  public readonly newMovieUploadedEvent = new Subject<void>();
 
   constructor(private http: HttpClient) {}
 
@@ -50,7 +51,10 @@ export class MyListApiService {
   }): Observable<Movie> {
     return this.http
       .post<MovieResult>(this.API_URL + '/movies/', movieForm)
-      .pipe(map(result => this.resultToMovie(result)));
+      .pipe(
+        map(result => this.resultToMovie(result)),
+        tap(() => this.newMovieUploadedEvent.next())
+      );
   }
 
   private resultToMovie(movie_result: MovieResult): Movie {

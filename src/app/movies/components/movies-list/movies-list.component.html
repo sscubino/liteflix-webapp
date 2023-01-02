@@ -1,4 +1,4 @@
-<div class="movies-list-container" #container>
+<div class="movies-list-container">
   <p [matMenuTriggerFor]="menu" class="menu-button">
     VER:
     <b>
@@ -10,7 +10,7 @@
     <button
       mat-menu-item
       (click)="display('popular')"
-      [ngClass]="isDisplayingPopular() ? 'selected-item' : ''">
+      [ngClass]="{ 'selected-item': isDisplayingPopular() }">
       POPULARES
       <mat-icon
         svgIcon="tick"
@@ -19,7 +19,7 @@
     <button
       mat-menu-item
       (click)="display('my-list')"
-      [ngClass]="isDisplayingMyList() ? 'selected-item' : ''">
+      [ngClass]="{ 'selected-item': isDisplayingMyList() }">
       MI LISTA
       <mat-icon
         svgIcon="tick"
@@ -29,13 +29,10 @@
   <div class="list-container">
     <div
       *ngFor="
-        let movie of isDisplayingPopular() ? popularMoviesList : myMoviesList;
-        let isLast = last
+        let movie of isDisplayingPopular() ? popularMoviesList : myMoviesList
       "
       class="movie-item-container">
-      <app-movie-tumbnail
-        [movie]="movie"
-        [width]="container.offsetWidth"></app-movie-tumbnail>
+      <app-movie-tumbnail [movie]="movie"></app-movie-tumbnail>
     </div>
   </div>
 </div>
