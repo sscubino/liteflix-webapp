@@ -4,6 +4,8 @@ import { Movie } from '../../models/movie';
 import { MyListApiService } from '../../services/my-list-api.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
+const LIST_LENGTH = 4;
+
 @Component({
   selector: 'app-movies-list',
   templateUrl: './movies-list.component.html',
@@ -37,14 +39,14 @@ export class MoviesListComponent implements OnInit {
 
   private fetchMyMoviesList() {
     this.myListService.getMyList().subscribe(myMoviesList => {
-      this.myMoviesList = myMoviesList.slice(0, 2);
+      this.myMoviesList = myMoviesList.slice(0, LIST_LENGTH);
       this.isLoadingMyMovies = false;
     });
   }
 
   private fetchPopularMovies() {
     this.moviesApiService.getPopularMovies().subscribe(popularMovies => {
-      this.popularMoviesList = popularMovies.slice(0, 4);
+      this.popularMoviesList = popularMovies.slice(0, LIST_LENGTH);
       this.isLoadingPopularMovies = false;
     });
   }
