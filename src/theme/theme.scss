@@ -92,8 +92,6 @@ $liteflix-typography-config: $liteflix-web-typography-config;
   @include mat.typography-hierarchy($liteflix-web-typography-config);
 }
 
-// @include mat.typography-hierarchy($liteflix-typography-config);
-
 .mat-primary-color-text {
   color: $liteflix-primary-color;
 }

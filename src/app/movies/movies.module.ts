@@ -15,7 +15,7 @@ import { MovieTumbnailComponent } from './components/movie-tumbnail/movie-tumbna
 import { UploadMovieModalComponent } from './components/upload-movie-modal/upload-movie-modal.component';
 import { MyListApiService } from './services/my-list-api.service';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { UploadMovieFormComponent } from './components/upload-movie/upload-movie-form.component';
+import { UploadMovieFormComponent } from './components/upload-movie-form/upload-movie-form.component';
 
 @NgModule({
   declarations: [

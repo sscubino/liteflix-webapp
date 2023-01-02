@@ -52,8 +52,10 @@ export class MyListApiService {
     return this.http
       .post<MovieResult>(this.API_URL + '/movies/', movieForm)
       .pipe(
-        map(result => this.resultToMovie(result)),
-        tap(() => this.newMovieUploadedEvent.next())
+        map(result => {
+          this.newMovieUploadedEvent.next();
+          return this.resultToMovie(result);
+        })
       );
   }
 
