@@ -12,6 +12,7 @@ mat-sidenav-content {
 .content-container {
   flex: 1;
   padding: 0 7%;
+  overflow-x: hidden;
 }
 
 .router-container {
