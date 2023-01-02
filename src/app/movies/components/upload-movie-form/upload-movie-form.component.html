@@ -28,11 +28,13 @@
           </mat-progress-bar>
         </div>
         <p
+          (click)="handleUploadCancel()"
           class="upload-cancel-button upload-action"
           *ngIf="file_upload_status === 'uploading'">
           CANCELAR
         </p>
         <p
+          (click)="handleUploadRetry()"
           class="upload-retry-button upload-action"
           *ngIf="file_upload_status === 'error'">
           REINTENTAR

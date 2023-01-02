@@ -79,6 +79,12 @@ export class UploadMovieFormComponent implements OnInit {
     this.file_upload_status = undefined;
   }
 
+  handleUploadRetry() {
+    this.handleFileDrop();
+    this.file_upload_status = 'uploading';
+    this.file_upload_progress = 0;
+  }
+
   handleSendForm() {
     if (this.uploadMovieForm.invalid) return;
     this.formIsSubmitting = true;
