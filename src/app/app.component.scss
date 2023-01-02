@@ -2,6 +2,7 @@
   position: relative;
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
 }
 
 mat-sidenav-content {
@@ -12,7 +13,6 @@ mat-sidenav-content {
 .content-container {
   flex: 1;
   padding: 0 7%;
-  overflow-x: hidden;
 }
 
 .router-container {
