@@ -23,7 +23,11 @@
     <p>{{ movie.title }}</p>
   </div>
   <div class="movie-details">
-    <mat-icon class="mat-primary-color-text start-icon">star</mat-icon>
+    <mat-icon
+      class="mat-primary-color-text start-icon"
+      *ngIf="movie.vote_average">
+      star
+    </mat-icon>
     {{ movie.vote_average }}
     <span style="text-align: end; flex: 1">{{
       movie.release_date?.getFullYear()
